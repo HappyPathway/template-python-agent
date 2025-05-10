@@ -1,3 +1,5 @@
+# Python 3.12+ required
+aiofiles==23.2.1 # Added aiofiles
 amqp==5.3.1
 annotated-types==0.7.0
 anthropic==0.50.0
@@ -86,6 +88,7 @@ opentelemetry-proto==1.32.1
 opentelemetry-sdk==1.32.1
 opentelemetry-semantic-conventions==0.53b1
 packaging==25.0
+pandas==2.2.2 # Added pandas
 pathspec==0.12.1
 platformdirs==4.3.7
 pluggy==1.5.0
@@ -122,6 +125,7 @@ PyYAML==6.0.2
 pyzmq==25.1.2
 redis==6.0.0
 requests==2.32.3
+retry # Added retry library
 rich==14.0.0
 rsa==4.9.1
 s3transfer==0.12.0
@@ -133,7 +137,6 @@ soupsieve==2.7
 SQLAlchemy==2.0.28
 sse-starlette==2.3.3
 starlette==0.46.2
--e git+ssh://git@github.com/HappyPathway/template-python-dev.git@db52cd4f9fcd8501971f2f9100b9fb9deb989bf6#egg=template_python_dev
 tokenizers==0.21.1
 tomlkit==0.13.2
 tqdm==4.67.1

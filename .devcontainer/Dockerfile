@@ -13,20 +13,10 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     curl \
     git \
-    vim \
-    zsh \
-    jq \
-    build-essential \
-    redis-server \
     && rm -rf /var/lib/apt/lists/*
 
 # Create and set environment directory
 WORKDIR /workspace
-
-# Install Node.js and npm (optional - uncomment if needed)
-# RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
-#     && apt-get install -y nodejs \
-#     && npm install -g typescript ts-node
 
 # Install base Python packages
 RUN pip install --no-cache-dir \
@@ -35,8 +25,7 @@ RUN pip install --no-cache-dir \
     pytest \
     pytest-cov \
     isort \
-    python-dotenv \
-    redis
+    python-dotenv
 
 # Switch back to dialog for any ad-hoc use of apt-get
 ENV DEBIAN_FRONTEND=dialog

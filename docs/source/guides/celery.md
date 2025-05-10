@@ -1,10 +1,10 @@
 # Distributed Task Processing with Celery
 
-This guide covers how to use Celery for distributed task processing in your agent applications using the utilities provided in the `utils.workers` module.
+This guide covers how to use Celery for distributed task processing in your agent applications using the utilities provided in the `ailf.workers` module.
 
 ## Overview
 
-Celery is a distributed task queue that allows you to run tasks asynchronously across multiple workers. The `utils.workers` module provides pre-configured Celery integration for:
+Celery is a distributed task queue that allows you to run tasks asynchronously across multiple workers. The `ailf.workers` module provides pre-configured Celery integration for:
 
 - Processing CPU or memory-intensive tasks
 - Running background operations
@@ -43,10 +43,10 @@ watchmedo auto-restart --directory=./ --pattern=*.py --recursive -- celery -A ut
 
 ## Using Predefined Tasks
 
-The template includes several predefined tasks in `utils.workers.tasks`:
+The template includes several predefined tasks in `ailf.workers.tasks`:
 
 ```python
-from utils.workers.tasks import process_document, analyze_content
+from ailf.workers.tasks import process_document, analyze_content
 
 # Process a document asynchronously
 result = process_document.delay("document-123", {"format": "json"})
@@ -63,10 +63,10 @@ if result.ready():
 
 ## Defining Custom Tasks
 
-You can define your own tasks in `utils.workers.tasks` or in your application code:
+You can define your own tasks in `ailf.workers.tasks` or in your application code:
 
 ```python
-from utils.workers.celery_app import app
+from ailf.workers.celery_app import app
 
 @app.task(bind=True, name="tasks.custom_task")
 def custom_task(self, arg1, arg2=None):
@@ -216,8 +216,8 @@ Combine Celery with AsyncIO for hybrid task processing:
 
 ```python
 import asyncio
-from utils.async_tasks import TaskManager
-from utils.workers.tasks import process_document
+from ailf.async_tasks import TaskManager
+from ailf.workers.tasks import process_document
 from celery.result import AsyncResult
 
 async def process_documents(document_ids):
@@ -294,8 +294,8 @@ Combine Celery with Redis messaging for a complete system:
 
 ```python
 import json
-from utils.messaging.redis import AsyncRedisClient, RedisPubSub
-from utils.workers.tasks import process_document
+from ailf.messaging.redis import AsyncRedisClient, RedisPubSub
+from ailf.workers.tasks import process_document
 from celery.result import AsyncResult
 
 async def redis_celery_bridge():

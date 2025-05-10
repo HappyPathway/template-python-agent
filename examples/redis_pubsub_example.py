@@ -22,7 +22,7 @@ import time
 from datetime import datetime
 from typing import Any, Dict, Optional
 
-from utils.messaging.redis import RedisConfig, RedisPubSub
+from ailf.messaging.redis import RedisConfig, RedisPubSub
 
 # Setup logging
 logging.basicConfig(

@@ -30,7 +30,7 @@ from typing import Generator, Optional
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker, Session
 
-from .logging import setup_logging
+from .core.logging import setup_logging  # Corrected import
 
 # Initialize logger
 logger = setup_logging('database')

@@ -18,7 +18,7 @@ This project includes built-in Redis messaging utilities for agent communication
 
 ```python
 # Publisher agent
-from utils.messaging.redis import RedisPubSub
+from ailf.messaging.redis import RedisPubSub
 
 pubsub = RedisPubSub()
 pubsub.publish("agent-commands", {
@@ -42,7 +42,7 @@ pubsub.run()  # Blocking call
 ### Workflow Processing
 
 ```python
-from utils.messaging.redis import RedisStream
+from ailf.messaging.redis import RedisStream
 
 # Task producer
 task_stream = RedisStream("tasks")

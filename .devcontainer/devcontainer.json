@@ -15,18 +15,6 @@
         5678,
         6379
     ],
-    "remoteEnv": {
-        "GOOGLE_CLOUD_PROJECT": "${localEnv:GOOGLE_CLOUD_PROJECT}",
-        "CLOUDSDK_CONFIG": "/home/vscode/.config/gcloud",
-        "GOOGLE_APPLICATION_CREDENTIALS": "/home/vscode/.config/gcloud/application_default_credentials.json",
-        "OPENAI_API_KEY": "${localEnv:OPENAI_API_KEY}",
-        "GEMINI_API_KEY": "${localEnv:GEMINI_API_KEY}",
-        "ANTHROPIC_API_KEY": "${localEnv:ANTHROPIC_API_KEY}",
-        "GITHUB_TOKEN": "${localEnv:GITHUB_TOKEN}",
-        "GCS_BUCKET_NAME": "${localEnv:GCS_BUCKET_NAME}",
-        "ENVIRONMENT": "${localEnv:ENVIRONMENT}",
-        "LOGFIRE_API_KEY": "${localEnv:LOGFIRE_API_KEY}"
-    },
     "customizations": {
         "vscode": {
             "extensions": [
@@ -40,7 +28,7 @@
                 "GitHub.copilot"
             ],
             "settings": {
-                "python.defaultInterpreterPath": "/usr/local/bin/python3.12",
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
                 "python.linting.enabled": true,
                 "python.linting.pylintEnabled": true,
                 "python.formatting.provider": "black",
@@ -63,13 +51,8 @@
     },
     "features": {
         "ghcr.io/devcontainers/features/git:1": {},
-        "ghcr.io/devcontainers/features/github-cli:1": {},
-        "ghcr.io/devcontainers/features/docker-in-docker:2": {},
-        "ghcr.io/devcontainers/features/python:1": {
-            "version": "3.12"
-        }
+        "ghcr.io/devcontainers/features/github-cli:1": {}
     },
-    "postCreateCommand": "pip install -r requirements.txt && chmod 700 ~/.ssh && chmod 600 ~/.ssh/id_rsa ~/.ssh/id_ed25519 ~/.ssh/config 2>/dev/null || true && chmod 644 ~/.ssh/*.pub 2>/dev/null || true && sudo -E .devcontainer/install-tools.sh",
-    "postAttachCommand": "eval $(ssh-agent) && ssh-add ~/.ssh/id_rsa ~/.ssh/id_ed25519 2>/dev/null || true && sudo -E .devcontainer/start-redis.sh",
+    "postCreateCommand": "pip install -r requirements.txt",
     "remoteUser": "vscode"
 }

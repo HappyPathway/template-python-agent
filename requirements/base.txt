@@ -1,3 +1,0 @@
-# Core dependencies for minimal functionality
-pydantic>=2.7.2
-python-dotenv>=1.0.0

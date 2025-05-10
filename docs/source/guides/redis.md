@@ -23,7 +23,7 @@ pip install -r requirements.txt
 ### Basic Redis Operations
 
 ```python
-from utils.messaging.redis import RedisClient
+from ailf.messaging.redis import RedisClient
 
 # Create a client
 client = RedisClient()
@@ -41,7 +41,7 @@ user = client.get_json("user:123")
 ### PubSub Messaging
 
 ```python
-from utils.messaging.redis import RedisPubSub
+from ailf.messaging.redis import RedisPubSub
 
 # Publisher
 pubsub = RedisPubSub()
@@ -61,7 +61,7 @@ subscriber.run()  # Blocking
 ### Stream Processing
 
 ```python
-from utils.messaging.redis import RedisStream
+from ailf.messaging.redis import RedisStream
 
 # Producer
 stream = RedisStream("tasks")
@@ -78,7 +78,7 @@ for message in messages:
 ### Distributed Locks
 
 ```python
-from utils.messaging.redis import RedisLock
+from ailf.messaging.redis import RedisLock
 
 # Using a lock
 lock = RedisLock("critical-section")
@@ -99,7 +99,7 @@ with lock.acquire_context() as acquired:
 ### Rate Limiting
 
 ```python
-from utils.messaging.redis import RedisRateLimiter
+from ailf.messaging.redis import RedisRateLimiter
 
 # Create a rate limiter (10 requests per second)
 limiter = RedisRateLimiter("api-endpoint", rate=10, period=1)

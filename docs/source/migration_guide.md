@@ -92,7 +92,7 @@ from pydantic import BaseModel, ConfigDict, Field
 3. Search for all files that import from old location and update them:
 
 ```bash
-grep -r "from utils.schemas.ai import" --include="*.py" .
+grep -r "from ailf.schemas.ai import" --include="*.py" .
 ```
 
 ### Step 5: Update __init__.py Files

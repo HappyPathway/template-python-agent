@@ -24,9 +24,9 @@ import sys
 import threading
 import time
 
-from utils.messaging import (DeviceType, SocketType, ZMQDevice, ZMQManager,
+from ailf.messaging.zmq import (DeviceType, SocketType, ZMQDevice, ZMQManager, 
                              ZMQSocket)
-from utils.messaging.redis import RedisClient, RedisPubSub, RedisStream
+from ailf.messaging.redis import RedisClient, RedisPubSub, RedisStream
 
 # Setup logging
 logging.basicConfig(

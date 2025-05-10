@@ -20,14 +20,14 @@ import uuid
 from contextlib import asynccontextmanager
 from typing import Any, AsyncIterator, Dict, List, Optional
 
-from mcp.server.fastmcp import Context, FastMCP
 from pydantic import BaseModel, Field
 
 # Import our utils
-from utils.async_tasks import TaskManager
+from ailf.base_mcp import Context, BaseMCP as FastMCP
+from ailf.async_tasks import TaskManager
 # Configure logging
-from utils.logging import setup_logging
-from utils.messaging.redis import AsyncRedisClient, RedisPubSub
+from ailf.core.logging import setup_logging
+from ailf.messaging.redis import AsyncRedisClient, RedisPubSub
 
 logger = setup_logging("mcp_async_redis")
 

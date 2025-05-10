@@ -1,16 +1,29 @@
-"""Utils package for template-python-dev.
+"""Core utilities for the AILF project."""
 
-This package contains utility modules for AI agent development,
-including storage, logging, monitoring, and AI engine components.
-"""
-
-from utils.ai_engine import AIEngine
-from utils.base_mcp import BaseMCP, Context
-from utils.logging import setup_logging
+from .core import logging
+from .core import monitoring
+from .ai import engine
+from .storage import local
+from .storage import setup as setup_storage
+from .cloud import gcs
+from .cloud import secrets
+from .messaging import zmq
+from .messaging import devices as zmq_devices
+from . import database
+from . import github_client
+from . import web_scraper
 
 __all__ = [
-    "BaseMCP",
-    "Context",
-    "AIEngine",
-    "setup_logging",
+    "logging",
+    "monitoring",
+    "engine",
+    "local",
+    "setup_storage",
+    "gcs",
+    "secrets",
+    "zmq",
+    "zmq_devices",
+    "database",
+    "github_client",
+    "web_scraper",
 ]

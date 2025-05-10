@@ -1,6 +1,6 @@
 # AsyncIO Task Management
 
-This guide covers the AsyncIO task management utilities provided in the `utils.async_tasks` module. These utilities help you manage and coordinate asynchronous tasks within your Python applications.
+This guide covers the AsyncIO task management utilities provided in the `ailf.async_tasks` module. These utilities help you manage and coordinate asynchronous tasks within your Python applications.
 
 ## Overview
 
@@ -17,7 +17,7 @@ The `TaskManager` class is the central component for managing asynchronous tasks
 
 ```python
 import asyncio
-from utils.async_tasks import TaskManager
+from ailf.async_tasks import TaskManager
 
 # Create and start a task manager
 task_manager = TaskManager()
@@ -205,8 +205,8 @@ The task manager automatically cleans up completed, failed, and cancelled tasks 
 The AsyncIO task manager works well with Redis messaging for building distributed systems:
 
 ```python
-from utils.messaging.redis import AsyncRedisClient, RedisPubSub
-from utils.async_tasks import TaskManager
+from ailf.messaging.redis import AsyncRedisClient, RedisPubSub
+from ailf.async_tasks import TaskManager
 import json
 
 async def setup_agent():
@@ -260,8 +260,8 @@ async def main():
 You can combine AsyncIO task management with Celery for hybrid task processing:
 
 ```python
-from utils.async_tasks import TaskManager
-from utils.workers.tasks import process_document
+from ailf.async_tasks import TaskManager
+from ailf.workers.tasks import process_document
 from celery.result import AsyncResult
 
 async def hybrid_processing():

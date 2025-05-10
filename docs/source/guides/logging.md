@@ -18,7 +18,7 @@ This module implements a consistent logging setup with the following features:
 ## Quick Start
 
 ```python
-from utils.logging import setup_logging
+from ailf.logging import setup_logging
 
 # Create a logger for your module
 logger = setup_logging('my_module')

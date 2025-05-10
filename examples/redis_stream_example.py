@@ -23,7 +23,7 @@ import time
 from datetime import datetime
 from typing import Any, Dict, List, Optional
 
-from utils.messaging.redis import RedisClient, RedisConfig, RedisStream
+from ailf.messaging.redis import RedisClient, RedisConfig, RedisStream
 
 # Setup logging
 logging.basicConfig(

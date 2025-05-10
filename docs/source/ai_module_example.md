@@ -129,7 +129,7 @@ This module provides a unified interface for interacting with different
 AI providers like OpenAI, Google's Gemini, and Anthropic's Claude.
 
 Example:
-    >>> from utils.ai import AIEngine
+    >>> from ailf.ai import AIEngine
     >>> engine = AIEngine(feature_name="text_generator")
     >>> text = await engine.generate_text("Write a short story about AI")
 """
@@ -161,7 +161,7 @@ Key Components:
     ContentFilterError: Exception for content filtered by safety settings
 
 Example:
-    >>> from utils.ai import AIEngine
+    >>> from ailf.ai import AIEngine
     >>> from my_schemas import JobAnalysis
     >>> 
     >>> engine = AIEngine(
@@ -186,9 +186,9 @@ from pydantic_ai.exceptions import ModelRetry, UnexpectedModelBehavior
 
 from schemas.ai.core import UsageLimits, AIResponse
 from schemas.ai.settings import AnthropicSettings, GeminiSettings, OpenAISettings, GeminiSafetySettings
-from utils.core.logging import setup_logging
-from utils.core.monitoring import MetricsCollector, setup_monitoring
-from utils.cloud.secrets import secret_manager
+from ailf.core.logging import setup_logging
+from ailf.core.monitoring import MetricsCollector, setup_monitoring
+from ailf.cloud.secrets import secret_manager
 
 # Initialize logging and monitoring
 logger = setup_logging('ai_engine')

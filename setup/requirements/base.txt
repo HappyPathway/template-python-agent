@@ -1,0 +1,4 @@
+# Core dependencies for minimal functionality
+# Python 3.12+ required
+pydantic>=2.7.2
+python-dotenv>=1.0.0

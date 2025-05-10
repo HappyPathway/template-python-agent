@@ -31,52 +31,52 @@ graph TD
 
 ### AI Engine and Dependencies
 
-- **`utils.ai_engine`**:
-  - Uses `utils.storage` for caching and persisting model outputs
-  - Uses `utils.monitoring` for tracking API calls, tokens, and performance
-  - Uses `utils.schemas.ai` for structured inputs and outputs
-  - Uses `utils.logging` for logging operations
+- **`ailf.ai_engine`**:
+  - Uses `ailf.storage` for caching and persisting model outputs
+  - Uses `ailf.monitoring` for tracking API calls, tokens, and performance
+  - Uses `ailf.schemas.ai` for structured inputs and outputs
+  - Uses `ailf.logging` for logging operations
 
 ### Messaging Components
 
-- **`utils.zmq`**:
-  - Uses `utils.logging` for logging operations
-  - Provides messaging primitives used by `utils.zmq_devices`
+- **`ailf.zmq`**:
+  - Uses `ailf.logging` for logging operations
+  - Provides messaging primitives used by `ailf.zmq_devices`
 
-- **`utils.messaging.redis`**:
-  - Uses `utils.logging` for logging operations
+- **`ailf.messaging.redis`**:
+  - Uses `ailf.logging` for logging operations
   - Provides Redis clients used by examples and applications
   - Independent from ZMQ messaging (can be used separately)
 
 ### Task Management
 
-- **`utils.async_tasks`**:
-  - Uses `utils.logging` for logging operations
+- **`ailf.async_tasks`**:
+  - Uses `ailf.logging` for logging operations
   - Independent from other components but often used with Redis for coordination
 
-- **`utils.workers.celery_app` and `utils.workers.tasks`**:
-  - Uses `utils.logging` for logging operations
+- **`ailf.workers.celery_app` and `ailf.workers.tasks`**:
+  - Uses `ailf.logging` for logging operations
   - Often used with Redis as the broker/backend
   - Can be used independently from AsyncTasks but can also be coordinated with it
 
 ### Storage and Configuration
 
-- **`utils.storage`**:
-  - Uses `utils.gcs_config_stash` for GCS configuration when in cloud mode
-  - Uses `utils.schemas.storage` for validating storage configurations
-  - Uses `utils.logging` for logging operations
+- **`ailf.storage`**:
+  - Uses `ailf.gcs_config_stash` for GCS configuration when in cloud mode
+  - Uses `ailf.schemas.storage` for validating storage configurations
+  - Uses `ailf.logging` for logging operations
 
-- **`utils.setup_storage`**:
-  - Uses `utils.storage` for initializing storage structures
+- **`ailf.setup_storage`**:
+  - Uses `ailf.storage` for initializing storage structures
   - Used during application startup
 
 ### MCP Server Components
 
-- **`utils.base_mcp`**:
-  - Uses `utils.ai_engine` for processing AI requests
-  - Uses `utils.async_tasks` for async task management
-  - Uses `utils.schemas.mcp` for defining MCP message structures
-  - Uses `utils.logging` for logging operations
+- **`ailf.base_mcp`**:
+  - Uses `ailf.ai_engine` for processing AI requests
+  - Uses `ailf.async_tasks` for async task management
+  - Uses `ailf.schemas.mcp` for defining MCP message structures
+  - Uses `ailf.logging` for logging operations
 
 ## Integration Patterns
 

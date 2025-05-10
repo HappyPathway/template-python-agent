@@ -6,8 +6,8 @@ It includes examples of registering tools, resources, and prompts.
 import asyncio
 from typing import List, Optional
 
-from utils.base_mcp import BaseMCP, Context
-from utils.schemas.mcp import AssistantMessage, UserMessage
+from ailf.base_mcp import BaseMCP, Context
+from ailf.schemas.mcp import AssistantMessage, UserMessage
 
 # Create a simple MCP server
 mcp = BaseMCP(
